@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffccdc;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my girlfriend?</h1>
+    <div class="buttons">
+        <button class="yes" onclick="yesClicked()">Yes</button>
+        <button class="no" onclick="noClicked()">No</button>
+    </div>
+
+    <script>
+        let size = 1;
+        function noClicked() {
+            size *= 1.5;
+            document.body.innerHTML = `
+                <h1>Will you be my girlfriend?</h1>
+                <div class="buttons">
+                    <button class="yes" style="font-size: ${size}em; padding: ${size * 10}px ${size * 20}px;" onclick="yesClicked()">Yes</button>
+                    <button class="no" onclick="noClicked()">No</button>
+                </div>
+            `;
+        }
+        function yesClicked() {
+            document.body.innerHTML = `<h1>YAY! I LOVE YOU! ❤️</h1>`;
+        }
+    </script>
+</body>
+</html>
